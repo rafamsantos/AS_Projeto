@@ -1,0 +1,377 @@
+@charset "utf-8";
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+[class*="fontawesome-"]:before {
+  font-family: "FontAwesome", sans-serif;
+}
+
+body {
+  background-image: url(../imgs/Fundo.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  font: 87.5%/1.5em "Open Sans", sans-serif;
+  margin: 0;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+after {
+  clear: both;
+}
+
+.login {
+  margin: 50px auto;
+  width: 320px;
+}
+
+.login form {
+  margin: auto;
+  padding: 22px 22px 22px 22px;
+  width: 100%;
+  border-radius: 5px;
+  background: rgb(26, 180, 103);
+  border-top: 3px solid rgb(26, 180, 103);
+  border-bottom: 3px solid rgb(26, 180, 103);
+}
+
+.login form span {
+  background-color: white;
+  border-radius: 3px 0px 0px 3px;
+  border-right: 3px solid #434a52;
+  color: #606468;
+  display: block;
+  float: left;
+  line-height: 50px;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+}
+
+.login form input[type="email"] {
+  background-color: white;
+  border-radius: 0px 13px 0px 13px;
+  color: black;
+  margin-bottom: 1em;
+  padding: 0 16px;
+  width: 90%;
+  height: 50px;
+}
+
+.login form input[type="password"] {
+  background-color: white;
+  border-radius: 0px 13px 0px 13px;
+  color: black;
+  margin-bottom: 1em;
+  padding: 0 16px;
+  width: 90%;
+  height: 50px;
+}
+
+.login form input[type="reset"] {
+  background: rgb(2, 2, 5);
+  border: 0;
+  width: 100%;
+  height: 40px;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+  
+
+.login form input[type="reset"]:hover {
+  background: rgb(0, 0, 0);
+  color: white;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.register {
+  margin: 50px auto;
+  width: 320px;
+}
+
+.register form {
+  margin: auto;
+  padding: 22px 22px 22px 22px;
+  width: 100%;
+  border-radius: 5px;
+  background: rgb(0, 0, 0);
+  border-top: 3px solid rgb(1, 1, 2);
+  border-bottom: 3px solid rgb(0, 0, 0);
+}
+
+.register form span {
+  background-color: #000000;
+  border-radius: 3px 0px 0px 3px;
+  border-right: 3px solid #434a52;
+  color: #606468;
+  display: block;
+  float: left;
+  line-height: 50px;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+}
+
+.register form input[type="email"] {
+  background-color: white;
+  border-radius: 0px 13px 0px 13px;
+  color: black;
+  margin-bottom: 1em;
+  padding: 0 16px;
+  width: 90%;
+  height: 50px;
+}
+
+.register form input[type="password"] {
+  background-color: white;
+  border-radius: 0px 13px 0px 13px;
+  color: black;
+  margin-bottom: 1em;
+  padding: 0 16px;
+  width: 90%;
+  height: 50px;
+}
+
+.register form input[type="text"] {
+  background-color: white;
+  border-radius: 0px 13px 0px 13px;
+  color: black;
+  margin-bottom: 1em;
+  padding: 0 16px;
+  width: 90%;
+  height: 50px;
+}
+
+.register form input[type="submit"] {
+  background: rgb(23, 193, 216);
+  border: 0;
+  width: 100%;
+  height: 40px;
+  border-radius: 3px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.register form input[type="submit"]:hover {
+  background: rgb(23, 193, 216);
+  border: 0;
+  width: 100%;
+  height: 40px;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#register form input[type="submit"]:hover {
+  background: #16aa56;
+}
+
+.rounded-left {
+  border-top-left-radius: 0.25rem !important;
+  border-bottom-left-radius: 0.25rem !important;
+}
+
+input[type="submit"].btn-block,
+input[type="reset"].btn-block,
+input[type="button"].btn-block {
+  width: 100%;
+}
+
+.modal-content .subscribe-form .form-group .submit {
+  color: #fff !important;
+  display: block;
+  width: 130px;
+  height: 52px;
+  font-size: 16px;
+  background: rgb(62, 62, 96) !important;
+  border: none;
+  border-radius: 0;
+}
+
+.modal-content .subscribe-form .form-group .submit:hover,
+.modal-content .subscribe-form .form-group .submit:focus {
+  text-decoration: none !important;
+  outline: none !important;
+}
+
+.modal-content .subscribe-form .icon {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.alert-dismissible {
+  padding-right: 4rem;
+}
+
+.alert-dismissible .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.75rem 1.25rem;
+  color: inherit;
+}
+
+.close {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 0.5;
+}
+
+.close:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+.close:not(:disabled):not(.disabled):hover,
+.close:not(:disabled):not(.disabled):focus {
+  opacity: 0.75;
+}
+
+button.close {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+a.close.disabled {
+  pointer-events: none;
+}
+
+.modal-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #dee2e6;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+}
+
+.modal-header .close {
+  padding: 1rem 1rem;
+  margin: -1rem -1rem -1rem auto;
+}
+
+.modal-content button.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+  color: #fff;
+}
+
+.modal-body {
+  position: relative;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1rem;
+}
+
+.modal-content .modal-body {
+  border: none;
+  overflow: hidden;
+  margin-top: -180px;
+  z-index: 2;
+}
+
+.modal-content .modal-body .icon {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  font-size: 30px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.modal-content .modal-body .icon img {
+  max-width: 70%;
+}
+
+.modal-content .modal-body h2 {
+  font-weight: 700;
+  color: #fff;
+}
+
+.modal-content .modal-body h4 {
+  font-size: 18px;
+}
+
+.modal-content .modal-body h3 {
+  font-weight: 800;
+  font-size: 22px;
+}
+
+.modal-content .modal-body h3 span {
+  font-weight: 300;
+}
+
+.modal-body {
+  background-color: rgb(26, 180, 103);
+}
+
+.forget {
+  background-color: rgb(255, 209, 92);
+  border-color: rgb(255, 209, 92);
+  color: rgb(26, 180, 103);
+  transition: 0.3s all;
+}
+
+.forget:hover {
+  background-color: rgb(10, 5, 1);
+  border-color: rgb(10, 5, 1);
+  color: white;
+}
+
+.forget:focus {
+  background-color: rgb(10, 5, 1);
+  border-color: rgb(10, 5, 1);
+  color: white;
+}
+
+.forget:focus:hover {
+  background-color: rgb(255, 209, 92);
+  border-color: rgb(255, 209, 92);
+  color: rgb(7, 2, 2);
+}
+
+.login-links {
+  color: rgb(62, 62, 96);
+}
+
+.login-links:hover {
+  color: rgb(71, 92, 66);
+}
+
+.modal-body {
+}
