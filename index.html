@@ -31,7 +31,6 @@
       .w3-wide {
         font-family: "Montserrat", sans-serif;
       }
-     
     </style>
   </head>
   <body class="w3-content" style="max-width: 1200px">
@@ -48,7 +47,7 @@
         ></i>
         <h3 class="w3-wide">
           <b>The Nike Attic</b>
-         <img src = imgs/nike.png width = 100px height = 50px>
+          <img src = imgs/nike.png width = 100px height = 50px>
         </h3>
       </div>
       <div
@@ -62,6 +61,12 @@
       </div>
       <a href="#footer" class="w3-bar-item w3-button w3-padding">Contacto</a>
       <a href="#footer" class="w3-bar-item w3-button w3-padding">Sobre nós</a>
+      <a
+        href="login.html"
+        class="w3-bar-item w3-button w3-padding"
+        style="text-decoration: underline"
+        >Log in</a
+      >
     </nav>
 
     <!-- Top menu on small screens -->
@@ -101,40 +106,42 @@
       <!-- Image header -->
       <div class="w3-display-container w3-container">
         <img src="imgs/nike_main.png" alt="Jeans" style="width: 100%" />
-      
+
         <div
           class="w3-display-topleft w3-text-white"
           style="padding: 24px 48px"
         >
-          <h1 class="w3-jumbo w3-hide-small" style="text-align: center;color:black;margin-top: 440px;font-style: italic; ">Using your past to build the future</h1>
-         
-          <p>
+          <h1
+            class="w3-jumbo w3-hide-small"
+            style="
+              text-align: center;
+              color: black;
+              margin-top: 440px;
+              font-style: italic;
+            "
+          >
+            Using your past to build the future
+          </h1>
+
+          <!--<p>
             <a
               href="#calcas.html"
-              class="w3-button w3-black w3-padding-large w3-large">SHOP NOW</a
+              class="w3-button w3-black w3-padding-large w3-large"
+              >SHOP NOW</a
             >
-          </p>
+          </p>-->
         </div>
       </div>
-
-      <div class="w3-container w3-text-grey" id="jeans">
-        <p>8 items</p>
-      </div>
-
-     
-
-        
-
-       
-
 
       <!-- Footer -->
       <footer
         class="w3-padding-64 w3-light-grey w3-small w3-center"
+        style="margin-top: 161px"
         id="footer"
       >
         <div class="w3-row-padding">
-          <div class="w3-col s4">
+          <div class="w3-col w3-light-grey w3-container s4 m4 l4"><br /></div>
+          <div class="w3-col s4 m4 l4">
             <h4>Contact</h4>
             <p>Questions? Go ahead.</p>
             <form action="/action_page.php" target="_blank">
@@ -182,15 +189,11 @@
         </div>
       </footer>
 
-      
-
       <!-- End page content -->
     </div>
 
-   
-
     <script>
-        // Accordion
+      // Accordion
       function myAccFunc() {
         var x = document.getElementById("demoAcc");
         if (x.className.indexOf("w3-show") == -1) {
@@ -213,7 +216,6 @@
         document.getElementById("mySidebar").style.display = "none";
         document.getElementById("myOverlay").style.display = "none";
       }
-      
     </script>
   </body>
 </html>
