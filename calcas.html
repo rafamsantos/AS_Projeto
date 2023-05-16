@@ -31,6 +31,28 @@
       .w3-wide {
         font-family: "Montserrat", sans-serif;
       }
+
+      .search-bar {
+        float: right;
+        padding: 6px;
+        margin-top: 22px;
+        margin-right: 16px;
+        border: none;
+        font-size: 14px;
+      }
+
+      .cart-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        position: relative;
+      }
+      
+      .cart-button i.fa-shopping-cart {
+        font-size: 35px;
+        color: #888;
+      }
+      
     </style>
   </head>
   <body class="w3-content" style="max-width: 1200px">
@@ -57,7 +79,7 @@
         style="font-weight: bold"
       >
         <a href="#" class="w3-bar-item w3-button">Camisolas</a>
-        <a href="#" class="w3-bar-item w3-button">Calças</a>
+        <a href="calcas.html" class="w3-bar-item w3-button">Calças</a>
         <a href="#" class="w3-bar-item w3-button">Sapatilhas </a>
         <a href="#" class="w3-bar-item w3-button">Casacos</a>
       </div>
@@ -100,15 +122,20 @@
       <header class="w3-container w3-xlarge">
         <p class="w3-left">Jeans</p>
         <p class="w3-right">
-          <i class="fa fa-shopping-cart w3-margin-right"></i>
-          <i class="fa fa-search"></i>
+          <button class="cart-button">
+            <i class="fa fa-shopping-cart"></i>
+          </button>
+          <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button id="search-button">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
         </p>
       </header>
 
 
-      <div class="w3-container w3-text-grey" id="jeans">
-        <p>8 items</p>
-      </div>
+     
 
       <!-- Product grid -->
       <div class="w3-row w3-grayscale">
@@ -119,22 +146,24 @@
                 <img src="imgs/pants.png" style="width: 100%" />
                 <span class="w3-tag w3-display-topleft">New</span>
                 <div class="w3-display-middle w3-display-hover">
-                  <button class="w3-button w3-black">
-                    Buy now <i class="fa fa-shopping-cart"></i>
+                  <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i>
                   </button>
                 </div>
               </div>
             
             <p>Ripped Skinny Jeans<br /><b>$24.99</b></p>
           </div>
+          
           <div class="w3-container">
-            <img src="imgs/pants.png" style="width: 100%" />
-            <div class="w3-display-middle w3-display-hover">
-                  <button class="w3-button w3-black">
-                    Buy now <i class="fa fa-shopping-cart"></i>
-                  </button>
-                </div>
-            <p>Mega Ripped Jeans<br /><b>$19.99</b></p>
+            <div class="w3-display-container">
+              <img src="imgs/pants.png" style="width: 100%" />
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black"> Buy now <i class="fa fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+           
+            <p>Mega Ripped Jeans ra<br /><b>$19.99</b></p>
           </div>
         </div>
 
@@ -144,22 +173,33 @@
               <img src="imgs/pants.png" style="width: 100%" />
               <span class="w3-tag w3-display-topleft">New</span>
               <div class="w3-display-middle w3-display-hover">
-                <button class="w3-button w3-black">
-                  Buy now <i class="fa fa-shopping-cart"></i>
+                <button class="w3-button w3-black"> Buy now <i class="fa fa-shopping-cart"></i>
                 </button>
               </div>
             </div>
             <p>Mega Ripped Jeans<br /><b>$19.99</b></p>
           </div>
           <div class="w3-container">
-            <img src="imgs/pants.png" style="width: 100%" />
+            <div class="w3-display-container">
+              <img src="imgs/pants.png" style="width: 100%" />
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
             <p>Washed Skinny Jeans<br /><b>$20.50</b></p>
           </div>
         </div>
 
         <div class="w3-col l3 s6">
           <div class="w3-container">
-            <img src="imgs/pants.png" style="width: 100%" />
+            <div class="w3-display-container">
+              <img src="imgs/pants.png" style="width: 100%" />
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
             <p>Washed Skinny Jeans<br /><b>$20.50</b></p>
           </div>
           <div class="w3-container">
@@ -177,11 +217,23 @@
 
         <div class="w3-col l3 s6">
           <div class="w3-container">
-            <img src="imgs/pants.png" style="width: 100%" />
+            <div class="w3-display-container">
+              <img src="imgs/pants.png" style="width: 100%" />
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
             <p>Vintage Skinny Jeans<br /><b>$14.99</b></p>
           </div>
           <div class="w3-container">
-            <img src="imgs/pants.png" style="width: 100%" />
+            <div class="w3-display-container">
+              <img src="imgs/pants.png" style="width: 100%" />
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
             <p>Ripped Skinny Jeans<br /><b>$24.99</b></p>
           </div>
         </div>
@@ -357,6 +409,7 @@
         document.getElementById("mySidebar").style.display = "none";
         document.getElementById("myOverlay").style.display = "none";
       }
+
     </script>
   </body>
 </html>
