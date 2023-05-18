@@ -1,12 +1,65 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Product Details</title>
-</head>
-<body>
-    <h1>Product Details</h1>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 1%;
+      }
+      .product-container {
+        background-color: rgb(237, 231, 231);
+        border-radius: 6px;
+        padding: 67px 25px 25px 25px;
+      }
+      .product-container > img {
+        width: 40%;
+        border-radius: 4px;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15);
+      }
+      .product-container .product-txt-container {
+        width: 20%;
+        margin: 67px 2.7% 0 0;
+        border-radius: 6px;
+        text-align: left;
+      }
+      .product-container > a:hover {
+        color: rgb(109, 109, 109);
+      }
+      .buy-button {
+        background-color: black;
+        color: white;
+        padding: 7px 35px;
+        margin: 0 25px 40px 0;
+      }
+      .buy-button:hover {
+        background-color: white;
+        color: black;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15);
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="font-family: 'Montserrat', sans-serif; font-weight: 200">
+      Product Details
+    </h1>
     <div id="product-info"></div>
-    
+
     <script src="product_details.js"></script>
-</body>
+  </body>
 </html>
