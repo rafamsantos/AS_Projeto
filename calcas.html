@@ -31,7 +31,17 @@
       .w3-wide {
         font-family: "Montserrat", sans-serif;
       }
+      .w3-sidebar a {
+        font-family: "Roboto", sans-serif;
+      }
+      .aHover{
+        text-decoration: none;
+        margin-left: 16px;
+      }
+      .aHover:hover{
+        text-decoration: underline;
 
+      }
       .search-bar {
         float: right;
         padding: 6px;
@@ -52,7 +62,9 @@
         font-size: 35px;
         color: #888;
       }
-      
+      .footerhover:hover{
+        color:rgb(150, 150, 150);
+      }
     </style>
   </head>
   <body class="w3-content" style="max-width: 1200px">
@@ -68,9 +80,9 @@
           class="fa fa-remove w3-hide-large w3-button w3-display-topright"
         ></i>
         <h3 class="w3-wide">
-          <a href="index.html"> 
+          <a href="index.html" style="text-decoration: none"> 
           <b>The Nike Attic</b>
-          <img src = imgs/nike.png width = 100px height = 50px>
+          <img src = imgs/nike.png style="width:100px; height: 50px;margin-left: 25%">
           </a>
         </h3>
       </div>
@@ -83,14 +95,9 @@
         <a href="#" class="w3-bar-item w3-button">Sapatilhas </a>
         <a href="#" class="w3-bar-item w3-button">Casacos</a>
       </div>
-      <a href="#footer" class="w3-bar-item w3-button w3-padding">Contact</a>
-      <a
-        href="javascript:void(0)"
-        class="w3-bar-item w3-button w3-padding"
-        onclick="document.getElementById('newsletter').style.display='block'"
-        >Newsletter</a
-      >
-      <a href="#footer" class="w3-bar-item w3-button w3-padding">Subscribe</a>
+      <a href="#footer" class="w3-bar-item w3-button w3-padding">Contato</a>
+      <a href="sobre.html" class="w3-bar-item w3-button w3-padding" style="margin-bottom: 8px">Sobre nós</a>
+      <a href="login.html" class="aHover">Log in</a>
     </nav>
 
     <!-- Top menu on small screens -->
