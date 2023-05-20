@@ -127,6 +127,62 @@ const productData = [
     price: "$5.99",
     type: "camisolas",
   },
+  {
+    name: "Clothing 17",
+    image: "imgs/casacos/1.webp",
+    description: "Description of Clothing 17",
+    price: "$69.99",
+    type: "casacos",
+  },
+  {
+    name: "Clothing 18",
+    image: "imgs/casacos/2.webp",
+    description: "Description of Clothing 18",
+    price: "$24.99",
+    type: "casacos",
+  },
+  {
+    name: "Clothing 19",
+    image: "imgs/casacos/3.webp",
+    description: "Description of Clothing 19",
+    price: "$30.99",
+    type: "casacos",
+  },
+  {
+    name: "Clothing 20",
+    image: "imgs/casacos/4.webp",
+    description: "Description of Clothing 20",
+    price: "$29.99",
+    type: "casacos",
+  },
+  {
+    name: "Clothing 21",
+    image: "imgs/casacos/5.jpeg",
+    description: "Description of Clothing 21",
+    price: "$29.99",
+    type: "casacos",
+  },
+  {
+    name: "Clothing 22",
+    image: "imgs/casacos/6.webp",
+    description: "Description of Clothing 22",
+    price: "$13.99",
+    type: "casacos",
+  },
+  {
+    name: "Clothing 23",
+    image: "imgs/casacos/7.webp",
+    description: "Description of Clothing 23",
+    price: "$24.97",
+    type: "casacos",
+  },
+  {
+    name: "Clothing 24",
+    image: "imgs/casacos/8.webp",
+    description: "Description of Clothing 24",
+    price: "$16.99",
+    type: "casacos",
+  },
 ];
 
 // Retrieve the selected product from the query parameter
