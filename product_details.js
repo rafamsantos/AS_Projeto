@@ -1,244 +1,243 @@
 // Function to retrieve the query parameter value
 function getQueryParam(variable) {
-  const query = window.location.search.substring(1);
-  const vars = query.split("&");
+    const query = window.location.search.substring(1);
+    const vars = query.split("&");
 
-  for (let i = 0; i < vars.length; i++) {
-    const pair = vars[i].split("=");
-    if (decodeURIComponent(pair[0]) === variable) {
-      return decodeURIComponent(pair[1]);
+    for (let i = 0; i < vars.length; i++) {
+        const pair = vars[i].split("=");
+        if (decodeURIComponent(pair[0]) === variable) {
+            return decodeURIComponent(pair[1]);
+        }
     }
-  }
 
-  return null;
+    return null;
 }
 
 // Product data - You can replace this with your actual data
-const productData = [
-  {
-    name: "Clothing 1",
-    image: "imgs/calças/6.webp",
-    description: "Description of Clothing 1",
-    price: "$29.99",
-    type: "calcas",
-  },
-  {
-    name: "Clothing 2",
-    image: "imgs/calças/1.webp",
-    description: "Description of Clothing 2",
-    price: "$39.99",
-    type: "calcas",
-  },
-  {
-    name: "Clothing 3",
-    image: "imgs/calças/2.webp",
-    description: "Description of Clothing 3",
-    price: "$39.99",
-    type: "calcas",
-  },
-  {
-    name: "Clothing 4",
-    image: "imgs/calças/4.webp",
-    description: "Description of Clothing 4",
-    price: "$39.99",
-    type: "calcas",
-  },
-  {
-    name: "Clothing 5",
-    image: "imgs/calças/5.webp",
-    description: "Description of Clothing 5",
-    price: "$39.99",
-    type: "calcas",
-  },
-  {
-    name: "Clothing 6",
-    image: "imgs/calças/7.webp",
-    description: "Description of Clothing 6",
-    price: "$39.99",
-    type: "calcas",
-  },
-  {
-    name: "Clothing 7",
-    image: "imgs/calças/8.webp",
-    description: "Description of Clothing 7",
-    price: "$39.99",
-    type: "calcas",
-  },
-  {
-    name: "Clothing 8",
-    image: "imgs/calças/9.webp",
-    description: "Description of Clothing 8",
-    price: "$39.99",
-    type: "calcas",
-  },
-  {
-    name: "Clothing 9",
-    image: "imgs/camisolas/1.webp",
-    description: "Description of Clothing 9",
-    price: "$15,99",
-    type: "camisolas",
-  },
-  {
-    name: "Clothing 10",
-    image: "imgs/camisolas/2.webp",
-    description: "Description of Clothing 10",
-    price: "$9.99",
-    type: "camisolas",
-  },
-  {
-    name: "Clothing 11",
-    image: "imgs/camisolas/3.webp",
-    description: "Description of Clothing 11",
-    price: "$29.99",
-    type: "camisolas",
-  },
-  {
-    name: "Clothing 12",
-    image: "imgs/camisolas/4.webp",
-    description: "Description of Clothing 12",
-    price: "$59.50",
-    type: "camisolas",
-  },
-  {
-    name: "Clothing 13",
-    image: "imgs/camisolas/5.webp",
-    description: "Description of Clothing 13",
-    price: "$19.99",
-    type: "camisolas",
-  },
-  {
-    name: "Clothing 14",
-    image: "imgs/camisolas/6.webp",
-    description: "Description of Clothing 14",
-    price: "$49.99",
-    type: "camisolas",
-  },
-  {
-    name: "Clothing 15",
-    image: "imgs/camisolas/7.webp",
-    description: "Description of Clothing 15",
-    price: "$15.99",
-    type: "camisolas",
-  },
-  {
-    name: "Clothing 16",
-    image: "imgs/camisolas/8.webp",
-    description: "Description of Clothing 16",
-    price: "$5.99",
-    type: "camisolas",
-  },
-  {
-    name: "Clothing 17",
-    image: "imgs/casacos/1.webp",
-    description: "Description of Clothing 17",
-    price: "$69.99",
-    type: "casacos",
-  },
-  {
-    name: "Clothing 18",
-    image: "imgs/casacos/2.webp",
-    description: "Description of Clothing 18",
-    price: "$24.99",
-    type: "casacos",
-  },
-  {
-    name: "Clothing 19",
-    image: "imgs/casacos/3.webp",
-    description: "Description of Clothing 19",
-    price: "$30.99",
-    type: "casacos",
-  },
-  {
-    name: "Clothing 20",
-    image: "imgs/casacos/4.webp",
-    description: "Description of Clothing 20",
-    price: "$29.99",
-    type: "casacos",
-  },
-  {
-    name: "Clothing 21",
-    image: "imgs/casacos/5.jpeg",
-    description: "Description of Clothing 21",
-    price: "$29.99",
-    type: "casacos",
-  },
-  {
-    name: "Clothing 22",
-    image: "imgs/casacos/6.webp",
-    description: "Description of Clothing 22",
-    price: "$13.99",
-    type: "casacos",
-  },
-  {
-    name: "Clothing 23",
-    image: "imgs/casacos/7.webp",
-    description: "Description of Clothing 23",
-    price: "$24.97",
-    type: "casacos",
-  },
-  {
-    name: "Clothing 24",
-    image: "imgs/casacos/8.webp",
-    description: "Description of Clothing 24",
-    price: "$16.99",
-    type: "casacos",
-  },
-  {
-    name: "Clothing 25",
-    image: "imgs/sapatilhas/1.webp",
-    description: "Description of Clothing 25",
-    price: "$49.99",
-    type: "sapatilhas",
-  },
-  {
-    name: "Clothing 26",
-    image: "imgs/sapatilhas/2.webp",
-    description: "Description of Clothing 26",
-    price: "$60.99",
-    type: "sapatilhas",
-  },
-  {
-    name: "Clothing 27",
-    image: "imgs/sapatilhas/3.webp",
-    description: "Description of Clothing 27",
-    price: "$29.99",
-    type: "sapatilhas",
-  },
-  {
-    name: "Clothing 28",
-    image: "imgs/sapatilhas/4.webp",
-    description: "Description of Clothing 28",
-    price: "$71.99",
-    type: "sapatilhas",
-  },
-  {
-    name: "Clothing 29",
-    image: "imgs/sapatilhas/5.webp",
-    description: "Description of Clothing 29",
-    price: "$29.99",
-    type: "sapatilhas",
-  },
-  {
-    name: "Clothing 30",
-    image: "imgs/sapatilhas/6.webp",
-    description: "Description of Clothing 30",
-    price: "$13.99",
-    type: "sapatilhas",
-  },
-  {
-    name: "Clothing 31",
-    image: "imgs/sapatilhas/7.webp",
-    description: "Description of Clothing 31",
-    price: "$79.99",
-    type: "sapatilhas",
-  },
-  {
-    name: "Clothing 32",
-    image: "imgs/sapatilhas/8.webp",
-    description: "Description of Clothing 32",
-    price: "$76.99",
-    type: "sapatilhas",
-  },
+const productData = [{
+        name: "Nike on line",
+        image: "imgs/calças/6.webp",
+        description: "Description of Nike on line",
+        price: "$29.99",
+        type: "calcas",
+    },
+    {
+        name: "Nike go",
+        image: "imgs/calças/1.webp",
+        description: "Description of Nike go",
+        price: "$39.99",
+        type: "calcas",
+    },
+    {
+        name: "Nike one Luxe",
+        image: "imgs/calças/2.webp",
+        description: "Description of Nike one Luxe",
+        price: "$39.99",
+        type: "calcas",
+    },
+    {
+        name: "Nike Sportswear Tech Fleece",
+        image: "imgs/calças/4.webp",
+        description: "Description of Nike Sportswear Tech Fleece",
+        price: "$39.99",
+        type: "calcas",
+    },
+    {
+        name: "Tottenham Hotspur Tech Fleece",
+        image: "imgs/calças/5.webp",
+        description: "Description of Tottenham Hotspur Tech Fleece",
+        price: "$39.99",
+        type: "calcas",
+    },
+    {
+        name: "FC Barcelona Tech Fleece",
+        image: "imgs/calças/7.webp",
+        description: "Description of FC Barcelona Tech Fleece",
+        price: "$39.99",
+        type: "calcas",
+    },
+    {
+        name: "Nike style",
+        image: "imgs/calças/8.webp",
+        description: "Description of Nike style",
+        price: "$39.99",
+        type: "calcas",
+    },
+    {
+        name: "Ripped Nike Jeans",
+        image: "imgs/calças/9.webp",
+        description: "Description of Ripped Nike Jeans",
+        price: "$39.99",
+        type: "calcas",
+    },
+    {
+        name: "Nike Sportswear Standart Issue",
+        image: "imgs/camisolas/1.webp",
+        description: "Description of Nike Sportswear Standart Issue",
+        price: "$15,99",
+        type: "camisolas",
+    },
+    {
+        name: "Nike go",
+        image: "imgs/camisolas/2.webp",
+        description: "Description of Nike go",
+        price: "$9.99",
+        type: "camisolas",
+    },
+    {
+        name: "NikeCourt Dri-FIT Slam",
+        image: "imgs/camisolas/3.webp",
+        description: "Description of NikeCourt Dri-FIT Slam",
+        price: "$29.99",
+        type: "camisolas",
+    },
+    {
+        name: "Nike Therma-FIT ADV A.P.S",
+        image: "imgs/camisolas/4.webp",
+        description: "Description of Nike Therma-FIT ADV A.P.S",
+        price: "$59.50",
+        type: "camisolas",
+    },
+    {
+        name: "Tiger Woods",
+        image: "imgs/camisolas/5.webp",
+        description: "Description of Tiger Woods",
+        price: "$19.99",
+        type: "camisolas",
+    },
+    {
+        name: "kevin Durant",
+        image: "imgs/camisolas/6.webp",
+        description: "Description of kevin Durant",
+        price: "$49.99",
+        type: "camisolas",
+    },
+    {
+        name: "Jordan Artist Series by Umar Rashid",
+        image: "imgs/camisolas/7.webp",
+        description: "Description of Jordan Artist Series by Umar Rashid",
+        price: "$15.99",
+        type: "camisolas",
+    },
+    {
+        name: "Nike Dri-FIT Icon",
+        image: "imgs/camisolas/8.webp",
+        description: "Description of Nike Dri-FIT Icon",
+        price: "$5.99",
+        type: "camisolas",
+    },
+    {
+        name: "Nike Sportswear Tech Fleece",
+        image: "imgs/casacos/1.webp",
+        description: "Description of Nike Sportswear Tech Fleece",
+        price: "$69.99",
+        type: "casacos",
+    },
+    {
+        name: "Nike Sportswear Tech Fleece",
+        image: "imgs/casacos/2.webp",
+        description: "Description of Nike Sportswear Tech Fleece",
+        price: "$24.99",
+        type: "casacos",
+    },
+    {
+        name: "Nike Sportswear Tech Fleece",
+        image: "imgs/casacos/3.webp",
+        description: "Description of Nike Sportswear Tech Fleece",
+        price: "$30.99",
+        type: "casacos",
+    },
+    {
+        name: "Air Jordan 1 Mid SE",
+        image: "imgs/casacos/4.webp",
+        description: "Description of Air Jordan 1 Mid SE",
+        price: "$29.99",
+        type: "casacos",
+    },
+    {
+        name: "Nike Dunk Low",
+        image: "imgs/casacos/5.jpeg",
+        description: "Description of Nike Dunk Low",
+        price: "$29.99",
+        type: "casacos",
+    },
+    {
+        name: "Nike Benassi JDI",
+        image: "imgs/casacos/6.webp",
+        description: "Description of Nike Benassi JDI",
+        price: "$13.99",
+        type: "casacos",
+    },
+    {
+        name: "Nike Sportswear",
+        image: "imgs/casacos/7.webp",
+        description: "Description of    Nike Sportswear",
+        price: "$24.97",
+        type: "casacos",
+    },
+    {
+        name: "Nike Sportswear Hybrid",
+        image: "imgs/casacos/8.webp",
+        description: "Description of Nike Sportswear Hybrid",
+        price: "$16.99",
+        type: "casacos",
+    },
+    {
+        name: "Nike Dunk Low",
+        image: "imgs/sapatilhas/1.webp",
+        description: "Description of Nike Dunk Low",
+        price: "$49.99",
+        type: "sapatilhas",
+    },
+    {
+        name: "Nike Air Force",
+        image: "imgs/sapatilhas/2.webp",
+        description: "Description of Nike Air Force",
+        price: "$60.99",
+        type: "sapatilhas",
+    },
+    {
+        name: "Nike Go FlyEase",
+        image: "imgs/sapatilhas/3.webp",
+        description: "Description of Nike Go FlyEase",
+        price: "$29.99",
+        type: "sapatilhas",
+    },
+    {
+        name: "Air Jordan 1 Mid SE",
+        image: "imgs/sapatilhas/4.webp",
+        description: "Description of Air Jordan 1 Mid SE",
+        price: "$71.99",
+        type: "sapatilhas",
+    },
+    {
+        name: "Nike Dunk Low",
+        image: "imgs/sapatilhas/5.webp",
+        description: "Description of Nike Dunk Low",
+        price: "$29.99",
+        type: "sapatilhas",
+    },
+    {
+        name: "Nike Benassi JDI",
+        image: "imgs/sapatilhas/6.webp",
+        description: "Description of Nike Benassi JDI",
+        price: "$13.99",
+        type: "sapatilhas",
+    },
+    {
+        name: "Air Jordan 1 Low FlyEase",
+        image: "imgs/sapatilhas/7.webp",
+        description: "Description of Air Jordan 1 Low FlyEase",
+        price: "$79.99",
+        type: "sapatilhas",
+    },
+    {
+        name: "Nike Air Force 1 Shadow<",
+        image: "imgs/sapatilhas/8.webp",
+        description: "Description of Nike Air Force 1 Shadow<",
+        price: "$76.99",
+        type: "sapatilhas",
+    },
 ];
 
 // Retrieve the selected product from the query parameter
@@ -246,15 +245,15 @@ const selectedProduct = getQueryParam("product");
 
 // Find the corresponding product in the data
 const product = productData.find(
-  (item, index) => index + 1 === parseInt(selectedProduct)
+    (item, index) => index + 1 === parseInt(selectedProduct)
 );
 
 // Display the product details
 if (product) {
-  const productInfoContainer = document.getElementById("product-info");
+    const productInfoContainer = document.getElementById("product-info");
 
-  // Create HTML markup for product details
-  const productInfoHTML = `
+    // Create HTML markup for product details
+    const productInfoHTML = `
         <div class="w3-display-container product-container" style="font-family:'Montserrat',sans-serif">
             <a href="${product.type}.html" class="w3-display-topleft" style="margin: 25px">Voltar ao Catálogo</a>
             <img src="${product.image}" alt="${product.name}">
@@ -269,6 +268,6 @@ if (product) {
         </div>
     `;
 
-  // Display product details
-  productInfoContainer.innerHTML = productInfoHTML;
+    // Display product details
+    productInfoContainer.innerHTML = productInfoHTML;
 }
