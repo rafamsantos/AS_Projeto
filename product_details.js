@@ -171,7 +171,7 @@ const productData = [{
     {
         name: "Nike Sportswear",
         image: "imgs/casacos/7.webp",
-        description: "Description of    Nike Sportswear",
+        description: "Description of Nike Sportswear",
         price: "$24.97",
         type: "casacos",
     },

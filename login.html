@@ -46,16 +46,17 @@
             >Não tem conta? Registe-se</a
           >
         </div>
-        <button 
-        style="background: rgb(255, 255, 255);
-        margin-top: 20px;
-        border: 0;
-        width: 100%;
-        height: 40px;
-        border-radius: 3px;
-        color: white;
-        cursor: pointer;
-        transition: background 0.3s ease-in-out;"><a href=https://pt-pt.facebook.com/>Facebook</a></button>
+
+        <button class="loginBtn loginBtn--facebook" onclick="redirectToExternalPage()" id = "myButton" class="float-left submit-button">
+          Login with Facebook
+        </button>
+
+        <script>
+          function redirectToExternalPage() {
+            window.location.href = 'https://pt-pt.facebook.com';
+          }
+        </script>
+
       </form>
     </div>
 
