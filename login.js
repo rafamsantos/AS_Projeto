@@ -33,6 +33,7 @@ function store() {
         localStorage.setItem('nome', nome.value);
         localStorage.setItem('pw', pw.value);
         alert('Your account has been created');
+        checkLoginStatus(); // Atualiza o status de login
     }
 }
 
@@ -46,12 +47,16 @@ function check() {
     var userRemember = document.getElementById("rememberMe");
 
     if (userName.value == storedName && userPw.value == storedPw) {
-        window.location.href = "./logado.html";
+        window.location.href = "./index.html";
+        checkLoginStatus(); // Atualiza o status de login
     } else {
         alert('Wrong Username and Password combination');
     }
     return false;
 }
+
+
+
 
 function forgot() {
     $('#forgotpass').modal('show')
