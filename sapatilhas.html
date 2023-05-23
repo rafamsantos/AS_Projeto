@@ -133,11 +133,19 @@
           <button class="cart-button">
             <i class="fa fa-shopping-cart"></i>
           </button>
-          <div class="search-bar">
-            <input type="text" id="search-input" placeholder="Search...">
-            <button id="search-button">
-              <i class="fa fa-search"></i>
-            </button>
+          <div class="search-bar" >
+            <input type="text" id="search-input" onkeyup="myFunction()" placeholder="Search...">
+            <button onclick="myFunction()">Pesquisar</button>
+            <ul id="product-list"style="display: none;">
+              <li><a href="http://127.0.0.1:5500/AS_Projeto/product_details.html?product=25">Nike Dunk Low</a></li>
+              <li><a href="http://127.0.0.1:5500/AS_Projeto/product_details.html?product=27">Nike Go FlyEase</a></li>
+              <li><a href="http://127.0.0.1:5500/AS_Projeto/product_details.html?product=29">Nike Dunk Low</a></li>
+              <li><a href="http://127.0.0.1:5500/AS_Projeto/product_details.html?product=31">Air Jordan 1 Low FlyEase</a></li>
+              <li><a href="http://127.0.0.1:5500/AS_Projeto/product_details.html?product=26">Nike Air Force</a></li>
+              <li><a href="http://127.0.0.1:5500/AS_Projeto/product_details.html?product=28">Air Jordan 1 Mid SE</a></li>
+              <li><a href="http://127.0.0.1:5500/AS_Projeto/product_details.html?product=30">Nike Benassi JDI</a></li>
+              <li><a href="http://127.0.0.1:5500/AS_Projeto/product_details.html?product=32">Nike Air Force 1 Shadow</a></li>
+            </ul>
           </div>
         </p>
       </header>
@@ -267,7 +275,7 @@
                 </form>
               </div>
             </div>
-            <p>Nike Air Force 1 Shadow<br /><b>76,99€</b></p>
+            <p>Nike Air Force 1 Shadow<br/><b>76,99€</b></p>
           </div>
         </div>
       </div>
@@ -281,31 +289,6 @@
     </footer>
 
    
-    <script>
-      // Accordion
-      function myAccFunc() {
-        var x = document.getElementById("demoAcc");
-        if (x.className.indexOf("w3-show") == -1) {
-          x.className += " w3-show";
-        } else {
-          x.className = x.className.replace(" w3-show", "");
-        }
-      }
-
-      // Click on the "Jeans" link on page load to open the accordion for demo purposes
-      document.getElementById("myBtn").click();
-
-      // Open and close sidebar
-      function w3_open() {
-        document.getElementById("mySidebar").style.display = "block";
-        document.getElementById("myOverlay").style.display = "block";
-      }
-
-      function w3_close() {
-        document.getElementById("mySidebar").style.display = "none";
-        document.getElementById("myOverlay").style.display = "none";
-      }
-
-    </script>
+    <script src="product_details.js"></script>
   </body>
 </html>

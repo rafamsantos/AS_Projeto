@@ -65,6 +65,8 @@
       .footerhover:hover{
         color:rgb(150, 150, 150);
       }
+      
+    
     </style>
   </head>
   <body class="w3-content" style="max-width: 1200px">
@@ -132,11 +134,19 @@
           <button class="cart-button">
             <i class="fa fa-shopping-cart"></i>
           </button>
-          <div class="search-bar">
-            <input type="text" id="search-input" placeholder="Search...">
-            <button id="search-button">
-              <i class="fa fa-search"></i>
-            </button>
+          <div class="search-bar" >
+            <input type="text" id="search-input" onkeyup="myFunction()" placeholder="Search...">
+            <button onclick="myFunction()">Pesquisar</button>
+            <ul id="product-list"style="display: none;">
+              <li><a href="http://127.0.0.1:5500/AS_Projeto/product_details.html?product=9">Nike Sportswear Standart Issue</a></li>
+              <li><a href="http://127.0.0.1:5500/AS_Projeto/product_details.html?product=11">NikeCourt Dri-FIT Slam</a></li>
+              <li><a href="http://127.0.0.1:5500/AS_Projeto/product_details.html?product=13">Tiger Woods</a></li>
+              <li><a href="http://127.0.0.1:5500/AS_Projeto/product_details.html?product=15">Jordan Artist Series by Umar Rashid</a></li>
+              <li><a href="http://127.0.0.1:5500/AS_Projeto/product_details.html?product=10">Nike go</a></li>
+              <li><a href="http://127.0.0.1:5500/AS_Projeto/product_details.html?product=12">Nike Therma-FIT ADV A.P.S</a></li>
+              <li><a href="http://127.0.0.1:5500/AS_Projeto/product_details.html?product=14">kevin Durant</a></li>
+              <li><a href="http://127.0.0.1:5500/AS_Projeto/product_details.html?product=16">Nike Dri-FIT Icon</a></li>
+            </ul>
           </div>
         </p>
       </header>
@@ -234,7 +244,7 @@
                 </form>
               </div>
             </div>
-            <p>kevin Durant<br /><b class="w3-text-red">49.99€</b></p>
+            <p>kevin Durant<br /><b>49.99€</b></p>
           </div>
         </div>
 
@@ -275,32 +285,7 @@
       <a href="index.html" style="text-decoration:none" class="footerhover">The Nike Attic©</a></p>
     </footer>
 
+   <script src="product_details.js"></script>
    
-    <script>
-      // Accordion
-      function myAccFunc() {
-        var x = document.getElementById("demoAcc");
-        if (x.className.indexOf("w3-show") == -1) {
-          x.className += " w3-show";
-        } else {
-          x.className = x.className.replace(" w3-show", "");
-        }
-      }
-
-      // Click on the "Jeans" link on page load to open the accordion for demo purposes
-      document.getElementById("myBtn").click();
-
-      // Open and close sidebar
-      function w3_open() {
-        document.getElementById("mySidebar").style.display = "block";
-        document.getElementById("myOverlay").style.display = "block";
-      }
-
-      function w3_close() {
-        document.getElementById("mySidebar").style.display = "none";
-        document.getElementById("myOverlay").style.display = "none";
-      }
-
-    </script>
   </body>
 </html>

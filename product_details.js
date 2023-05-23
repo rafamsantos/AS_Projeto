@@ -232,7 +232,7 @@ const productData = [{
         type: "sapatilhas",
     },
     {
-        name: "Nike Air Force 1 Shadow<",
+        name: "Nike Air Force 1 Shadow",
         image: "imgs/sapatilhas/8.webp",
         description: "Description of Nike Air Force 1 Shadow<",
         price: "$76.99",
@@ -271,3 +271,30 @@ if (product) {
     // Display product details
     productInfoContainer.innerHTML = productInfoHTML;
 }
+
+function myFunction() {
+    var input = document.getElementById('search-input').value.trim().toUpperCase();
+    var ul = document.getElementById("product-list");
+    var li = ul.getElementsByTagName('li');
+
+    // Verifica se o campo de pesquisa está vazio
+    if (input.length === 0) {
+        ul.style.display = "none"; // Oculta a lista
+        return; // Sai da função sem processar a pesquisa
+    }
+
+    for (var i = 0; i < li.length; i++) {
+        var a = li[i].getElementsByTagName("a")[0];
+        var txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(input) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+
+    ul.style.display = ""; // Exibe a lista de resultados
+}
+
+
+
