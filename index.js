@@ -1,7 +1,7 @@
 // Função para realizar login
 function login() {
   // Código para realizar o login do usuário
-  
+
   // Simulação do login bem-sucedido
   var isLoggedIn = true;
 
@@ -29,9 +29,11 @@ function checkLoginStatus() {
   var isLoggedIn = localStorage.getItem('isLoggedIn');
 
   if (isLoggedIn === 'true') {
+    document.getElementById('acc-container').style.display = 'table';
     document.getElementById('loginButton').textContent = 'Log out';
     document.getElementById('loginButton').onclick = logout;
   } else {
+    document.getElementById('acc-container').style.display = 'none';
     document.getElementById('loginButton').textContent = 'Log in';
     document.getElementById('loginButton').onclick = login;
   }
