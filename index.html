@@ -33,6 +33,31 @@
       .w3-wide {
         font-family: "Montserrat", sans-serif;
       }
+      .acc-container{
+        padding: 5px;
+        width: 100%;
+        display: table;
+        margin-bottom: 8px;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+      }
+      .acc-container .acc-cell {
+        display: table-cell;
+        vertical-align: middle;
+      }
+      .acc-container .user-img{
+        float: left;
+      }
+      .acc-container .config-img{
+        float: right;
+        margin-bottom: 8px;
+        border-radius: 8px;
+        padding:4px;
+      }
+      .acc-container .config-img:hover{
+        background-color: rgb(116, 116, 116);
+        box-shadow: 3px 3px 6px rgba(0,0,0,0.15);
+      }
       .aHover{
         text-decoration: none;
         margin-left: 16px;
@@ -75,6 +100,11 @@
         <a href="calcas.html" class="w3-bar-item w3-button">Calças</a>
         <a href="sapatilhas.html" class="w3-bar-item w3-button">Sapatilhas </a>
         <a href="casacos.html" class="w3-bar-item w3-button">Casacos</a>
+      </div>
+      <div id="acc-container" class="acc-container">
+        <img src="imgs/userimg.png" alt="usuário" class="acc-cell user-img" style="height: 50px;padding-right:-50px">
+        <span class="acc-cell" style="font-family:'Montserrat',sans-serif;font-size: 11pt;font-weight:600">Nome</span>
+        <img src="imgs/config.png" alt="Configurações" class="acc-cell config-img" style="height:35px">
       </div>
       <a href="#footer" class="w3-bar-item w3-button w3-padding">Contato</a>
       <a href="sobre.html" class="w3-bar-item w3-button w3-padding">Sobre nós</a>
