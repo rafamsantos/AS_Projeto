@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Nike Attic</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      .w3-sidebar a {
+        font-family: "Roboto", sans-serif;
+      }
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      .w3-wide {
+        font-family: "Montserrat", sans-serif;
+      }
+      .acc-container{
+        padding: 5px;
+        width: 100%;
+        display: table;
+        margin-bottom: 8px;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+      }
+      .acc-container .acc-cell {
+        display: table-cell;
+        vertical-align: middle;
+      }
+      .acc-container .user-img{
+        float: left;
+      }
+      .acc-container .config-img{
+        float: right;
+        margin-bottom: 8px;
+        border-radius: 8px;
+        padding:4px;
+      }
+      .acc-container .config-img:hover{
+        background-color: rgb(116, 116, 116);
+        box-shadow: 3px 3px 6px rgba(0,0,0,0.15);
+      }
+      .acc-display{
+        height: auto;
+        border-bottom: 2px solid rgb(138, 138, 138);
+      }
+      .store-info-container {
+        height: 100%;
+        padding: 10px;
+        text-align: middle;
+      }
+      .store-info-container .selling-info {
+        background-color: rgb(118, 118, 249);
+        height: auto;
+        width: 200px;
+        margin-top: 15px;
+        border-radius: 0 10px 10px 10px;
+        padding: 10px;
+        color: white;
+        text-align: middle;
+      }
+      .aHover{
+        text-decoration: none;
+        margin-left: 16px;
+      }
+      .aHover:hover{
+        text-decoration: underline;
+
+      }
+      .footerhover:hover{
+        color:rgb(150, 150, 150);
+      }
+    
+
+    </style>
+  </head>
+  <body class="w3-content" style="max-width: 1200px">
+    <!-- Sidebar/menu -->
+    <nav
+      class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top"
+      style="z-index: 3; width: 250px"
+      id="mySidebar"
+    >
+      <div class="w3-container w3-display-container w3-padding-16">
+        <i
+          onclick="w3_close()"
+          class="fa fa-remove w3-hide-large w3-button w3-display-topright"
+        ></i>
+        <h3 class="w3-wide">
+          <a href="index.html" style="text-decoration: none"> 
+          <b>The Nike Attic</b>
+          <img src = imgs/nike.png style="width:100px; height: 50px;margin-left: 25%">
+          </a>
+        </h3>
+      </div>
+      <div
+        class="w3-padding-64 w3-large w3-text-grey"
+        style="font-weight: bold"
+      >
+        <a href="camisolas.html" class="w3-bar-item w3-button">Camisolas</a>
+        <a href="calcas.html" class="w3-bar-item w3-button">Calças</a>
+        <a href="sapatilhas.html" class="w3-bar-item w3-button">Sapatilhas </a>
+        <a href="casacos.html" class="w3-bar-item w3-button">Casacos</a>
+      </div>
+      <div id="acc-container" class="acc-container">
+        <img src="imgs/userimg.png" alt="usuário" class="acc-cell user-img" style="height: 50px;padding-right:-50px">
+        <span class="acc-cell" style="font-family:'Montserrat',sans-serif;font-size: 11pt;font-weight:600">Nome</span>
+        <img src="imgs/config.png" alt="Configurações" class="acc-cell config-img" style="height:35px">
+      </div>
+      <a href="#footer" class="w3-bar-item w3-button w3-padding">Contato</a>
+      <a href="sobre.html" class="w3-bar-item w3-button w3-padding">Sobre nós</a>
+      <a href="login.html" class="w3-bar-item w3-button w3-padding" id="loginButton" >Log in</a>
+    </nav>
+
+    <!-- Top menu on small screens -->
+    <header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+      <div class="w3-bar-item w3-padding-24 w3-wide">The Nike Attic</div>
+      <a
+        href="javascript:void(0)"
+        class="w3-bar-item w3-button w3-padding-24 w3-right"
+        onclick="w3_open()"
+        ><i class="fa fa-bars"></i
+      ></a>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div
+      class="w3-overlay w3-hide-large"
+      onclick="w3_close()"
+      style="cursor: pointer"
+      title="close side menu"
+      id="myOverlay"
+    ></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left: 250px">
+      <!-- Push down content on small screens -->
+      <div class="w3-hide-large" style="margin-top: 83px"></div>
+
+      <!-- Top header -->
+      <header class="w3-container w3-xlarge">
+        <p class="w3-left">Minha Conta</p>
+        <p class="w3-right">
+          <i class="fa fa-shopping-cart w3-margin-right"></i>
+          <i class="fa fa-search"></i>
+        </p>
+      </header>
+
+      <!-- Image header -->
+      <div class="w3-display-container w3-container acc-display">
+        <div style="float: left">
+            <img src="imgs/userimg.png" alt="usuário" style="width: 150px; margin: 0 15px 0 15px">
+            <h2 style="font-weight: 600;margin-left: 41px; margin-bottom: 23px">Nome</h2>
+        </div>
+        <div style="width: 40%;display: table;float: left">
+            <h3 style="margin-top: 30px">Email</h3>
+            <span></span>
+            <h3></h3>
+            <span></span>
+        </div>
+        <nav class="w3-display-bottommiddle" style="margin-bottom: 23px;">
+            <span href="" class="aHover" onclick="carrinho()">Carrinho</span>
+            <span href="" class="aHover" onclick="compras()">Compras</span>
+            <span href="" class="aHover" onclick="vender()">Vender</span>
+            <span href="" class="aHover" onclick="config()">Configurações</span>
+        </nav>
+      </div>
+      <div id="acc-page-display" style="margin-top:20px;margin-bottom: 100px">
+      </div>
+
+      <!-- Footer -->
+      <footer style="z-index: 4;padding: 20px 0 0 0" >
+        <a href="https://www.ua.pt/" style="text-decoration:none" class="footerhover">Universidade de Aveiro</a></p>
+        <a href="index.html" style="text-decoration:none" class="footerhover">The Nike Attic©</a></p>
+      </footer>
+
+      <!-- End page content -->
+    </div>
+
+    <script>
+      // Accordion
+      function myAccFunc() {
+        var x = document.getElementById("demoAcc");
+        if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+        } else {
+          x.className = x.className.replace(" w3-show", "");
+        }
+      }
+
+      // Click on the "Jeans" link on page load to open the accordion for demo purposes
+      document.getElementById("myBtn").click();
+
+      // Open and close sidebar
+      function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("myOverlay").style.display = "block";
+      }
+
+      function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("myOverlay").style.display = "none";
+      }
+
+    </script>
+    <script src="login.js"></script>
+    <!--<script src="index.js"></script>-->
+    <script src="conta.js"></script>
+  </body>
+</html>
