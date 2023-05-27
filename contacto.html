@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="contacto.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link
       rel="stylesheet"
@@ -33,14 +34,44 @@
       .w3-wide {
         font-family: "Montserrat", sans-serif;
       }
-      .cart-container{
+      .acc-container{
+        padding: 5px;
+        width: 100%;
+        display: table;
+        margin-bottom: 8px;
         border-top: 1px solid black;
         border-bottom: 1px solid black;
-        padding: 24px 48px;
+      }
+      .acc-container .acc-cell {
+        display: table-cell;
+        vertical-align: middle;
+      }
+      .acc-container .user-img{
+        float: left;
+      }
+      .acc-container .config-img{
+        float: right;
+        margin-bottom: 8px;
+        border-radius: 8px;
+        padding:4px;
+      }
+      .acc-container .config-img:hover{
+        background-color: rgb(116, 116, 116);
+        box-shadow: 3px 3px 6px rgba(0,0,0,0.15);
+      }
+      .aHover{
+        text-decoration: none;
+        margin-left: 16px;
+      }
+      .aHover:hover{
+        text-decoration: underline;
+
       }
       .footerhover:hover{
         color:rgb(150, 150, 150);
       }
+    
+
     </style>
   </head>
   <body class="w3-content" style="max-width: 1200px">
@@ -71,9 +102,14 @@
         <a href="sapatilhas.html" class="w3-bar-item w3-button">Sapatilhas </a>
         <a href="casacos.html" class="w3-bar-item w3-button">Casacos</a>
       </div>
-      <a href="#footer" class="w3-bar-item w3-button w3-padding">Contato</a>
+      <div id="acc-container" class="acc-container">
+        <img src="imgs/userimg.png" alt="usuário" class="acc-cell user-img" style="height: 50px;padding-right:-50px">
+        <span class="acc-cell" style="font-family:'Montserrat',sans-serif;font-size: 11pt;font-weight:600">Nome</span>
+        <img src="imgs/config.png" alt="Configurações" class="acc-cell config-img" style="height:35px">
+      </div>
+      <a href="contacto.html" class="w3-bar-item w3-button w3-padding">Contato</a>
       <a href="sobre.html" class="w3-bar-item w3-button w3-padding">Sobre nós</a>
-      <a href="login.html" class="w3-bar-item w3-button w3-padding">Log in</a>
+      <a href="login.html" class="w3-bar-item w3-button w3-padding" id="loginButton" >Log in</a>
     </nav>
 
     <!-- Top menu on small screens -->
@@ -103,43 +139,43 @@
 
       <!-- Top header -->
       <header class="w3-container w3-xlarge">
-        <p class="w3-left">Meu Carrinho</p>
+        <p class="w3-left">Página Principal</p>
         <p class="w3-right">
           <i class="fa fa-shopping-cart w3-margin-right"></i>
           <i class="fa fa-search"></i>
         </p>
       </header>
 
-      <!-- Image header -->
-      <div class="w3-container">
-        <div
-          class="w3-rest w3-container w3-display-container cart-container"
-          style="margin: 24px auto; height: 400px"
-        >
-          <a href="index.html" class="w3-display-topleft" style="margin: 24px; color:white">Voltar</a>
-          <div id="carrinho" class="w3-display-middle">
-          </div>
-        </div>
-      </div>
+      <main>
+        <section class="contacto">
+          <h2>Contacto</h2>
+          <p>Preencha o formulário abaixo para entrar em contacto conosco:</p>
+          <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+            
+            <button type="submit">Enviar</button>
+          </form>
+        </section>
+      </main>
 
       <!-- Footer -->
-      <footer style="z-index: 4;padding: 20px 0 0 0">
+      <footer style="z-index: 4;padding: 20px 0 0 0" >
         <a href="https://www.ua.pt/" style="text-decoration:none" class="footerhover">Universidade de Aveiro</a></p>
         <a href="index.html" style="text-decoration:none" class="footerhover">The Nike Attic©</a></p>
       </footer>
 
       <!-- End page content -->
     </div>
-    <script src="product_details.js"></script>
-    
 
-    <script>
-       function adicionarAoCarrinho(imagem) {
-        var carrinho = document.getElementById('carrinho');
-        var item = document.createElement('img');
-        item.src = imagem;
-        carrinho.appendChild(item);
-      }
-    </script>
+    
+    <script src="login.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>

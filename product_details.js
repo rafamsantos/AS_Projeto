@@ -263,13 +263,20 @@ if (product) {
                 <p style="font-weight: 400">Price: ${product.price}</p>
             </div>
             <div class="buy-button w3-display-bottomright">
-                    <a href="" style="font-size: 20px;font-weight: 600; text-decoration: none">Adicionar ao Carrinho</a>
+            <a href="carrinho.html" onclick="adicionarAoCarrinho(${JSON.stringify(product)})" style="font-size: 20px;font-weight: 600; text-decoration: none">Adicionar ao Carrinho</a>
             </div>
         </div>
     `;
 
     // Display product details
     productInfoContainer.innerHTML = productInfoHTML;
+}
+
+function adicionarAoCarrinho(imagem) {
+    var carrinho = document.getElementById('carrinho');
+    var item = document.createElement('img');
+    item.src = imagem;
+    carrinho.appendChild(item);
 }
 
 function myFunction() {
