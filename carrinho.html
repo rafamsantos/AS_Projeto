@@ -33,6 +33,31 @@
       .w3-wide {
         font-family: "Montserrat", sans-serif;
       }
+      .acc-container{
+        padding: 5px;
+        width: 100%;
+        display: table;
+        margin-bottom: 8px;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+      }
+      .acc-container .acc-cell {
+        display: table-cell;
+        vertical-align: middle;
+      }
+      .acc-container .user-img{
+        float: left;
+      }
+      .acc-container .config-img{
+        float: right;
+        margin-bottom: 8px;
+        border-radius: 8px;
+        padding:4px;
+      }
+      .acc-container .config-img:hover{
+        background-color: rgb(116, 116, 116);
+        box-shadow: 3px 3px 6px rgba(0,0,0,0.15);
+      }
       .cart-container{
         border-top: 1px solid black;
         border-bottom: 1px solid black;
@@ -71,7 +96,7 @@
         <a href="sapatilhas.html" class="w3-bar-item w3-button">Sapatilhas </a>
         <a href="casacos.html" class="w3-bar-item w3-button">Casacos</a>
       </div>
-      <a href="#footer" class="w3-bar-item w3-button w3-padding">Contato</a>
+      <a href="contacto.html" class="w3-bar-item w3-button w3-padding">Contato</a>
       <a href="sobre.html" class="w3-bar-item w3-button w3-padding">Sobre nós</a>
       <a href="login.html" class="w3-bar-item w3-button w3-padding">Log in</a>
     </nav>
@@ -116,9 +141,8 @@
           class="w3-rest w3-container w3-display-container cart-container"
           style="margin: 24px auto; height: 400px"
         >
-          <a href="index.html" class="w3-display-topleft" style="margin: 24px; color:white">Voltar</a>
-          <div id="carrinho" class="w3-display-middle">
-          </div>
+         <a href="index.html" class="w3-display-topleft" style="margin: 24px; color:white">Voltar</a>
+        <span class="w3-display-middle">Você não tem itens no carrinho</span>
         </div>
       </div>
 
@@ -130,15 +154,30 @@
 
       <!-- End page content -->
     </div>
-    <script src="product_details.js"></script>
-    
 
     <script>
-       function adicionarAoCarrinho(imagem) {
-        var carrinho = document.getElementById('carrinho');
-        var item = document.createElement('img');
-        item.src = imagem;
-        carrinho.appendChild(item);
+      // Accordion
+      function myAccFunc() {
+        var x = document.getElementById("demoAcc");
+        if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+        } else {
+          x.className = x.className.replace(" w3-show", "");
+        }
+      }
+
+      // Click on the "Jeans" link on page load to open the accordion for demo purposes
+      document.getElementById("myBtn").click();
+
+      // Open and close sidebar
+      function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("myOverlay").style.display = "block";
+      }
+
+      function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("myOverlay").style.display = "none";
       }
     </script>
   </body>

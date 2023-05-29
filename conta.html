@@ -62,6 +62,74 @@
         height: auto;
         border-bottom: 2px solid rgb(138, 138, 138);
       }
+      .cart-with-itens {
+        height: 250px;
+        width: 100%;
+        margin: 15px 15px  0 15px;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        padding: 10px 5px 0 5px;
+        overflow: auto;
+      }
+      .item-box {
+        width: 100%;
+        height: 90px;
+        background-color: rgb(172, 172, 172);
+        border-radius: 8px;
+        margin-bottom: 10px;
+        box-shadow: 4px 4px 6px rgba(0,0,0,0.15);
+      }
+      .item-box:hover{
+        background-color: white;
+        box-shadow: none;
+      }
+      .item-box img {
+        float: left;
+        height: 70px;
+        border: 2px solid black;
+        border-radius: 5px;
+        margin: 10px;
+      }
+      .item-box span {
+        float: left;
+        font-size: 12pt;
+        font-weight: 600;
+        margin-top: 5px;
+        text-decoration: underline;
+      }
+      .item-box p {
+        font-size: 9pt;
+        color: rgb(77, 77, 77);
+        margin: -5px 0 0 0;  
+      }
+      .item-box a {
+        float: right;
+        font-size: 10pt;
+        color:red;
+        margin: -22px 10px 0 0;
+        border: 3px solid red;
+        border-radius: 5px;
+        padding: 5px 15px;
+      }
+      .item-box a:hover {
+        text-decoration: underline;
+      }
+      .buy-itens {
+        height: 20px;
+        text-decoration: none;
+        background-color: gray;
+        position: inherit;
+        margin: -15px 0 15px 83%;
+        border-radius: 8px;
+        padding: 5px 20px;
+        font-size: 10pt;
+        text-align: middle;
+      }
+      .buy-itens:hover {
+        background-color: black;
+        color: white;
+        box-shadow: 4px 4px 6px rgba(0,0,0,0.15);
+      }
       .store-info-container {
         height: 100%;
         padding: 10px;
@@ -122,10 +190,10 @@
       </div>
       <div id="acc-container" class="acc-container">
         <img src="imgs/userimg.png" alt="usuário" class="acc-cell user-img" style="height: 50px;padding-right:-50px">
-        <span class="acc-cell" style="font-family:'Montserrat',sans-serif;font-size: 11pt;font-weight:600">Nome</span>
-        <img src="imgs/config.png" alt="Configurações" class="acc-cell config-img" style="height:35px">
+        <span id="acc-name" class="acc-cell" style="font-family:'Montserrat',sans-serif;font-size: 11pt;font-weight:600"></span>
+        <img src="imgs/config.png" alt="Configurações" class="acc-cell config-img" style="height:35px" onclick="window.location.href='conta.html'">
       </div>
-      <a href="contacto.html" class="w3-bar-item w3-button w3-padding">Contacto</a>
+      <a href="contacto.html" class="w3-bar-item w3-button w3-padding">Contato</a>
       <a href="sobre.html" class="w3-bar-item w3-button w3-padding">Sobre nós</a>
       <a href="login.html" class="w3-bar-item w3-button w3-padding" id="loginButton" >Log in</a>
     </nav>
@@ -168,10 +236,10 @@
       <div class="w3-display-container w3-container acc-display">
         <div style="float: left">
             <img src="imgs/userimg.png" alt="usuário" style="width: 150px; margin: 0 15px 0 15px">
-            <h2 style="font-weight: 600;margin-left: 41px; margin-bottom: 23px">Nome</h2>
+            <h2 id="acc-name-display" style="font-weight: 600;margin-left: 41px; margin-bottom: 23px">Nome</h2>
         </div>
         <div style="width: 40%;display: table;float: left">
-            <h3 style="margin-top: 30px">Email</h3>
+            <h3 id="acc-email-display" style="margin-top: 30px">Email</h3>
             <span></span>
             <h3></h3>
             <span></span>
@@ -184,6 +252,69 @@
         </nav>
       </div>
       <div id="acc-page-display" style="margin-top:20px;margin-bottom: 100px">
+        <header class="w3-container w3-xlarge">
+            <h4 class="w3-left">Carrinho</h4>
+              <div class="w3-display-container cart-with-itens">
+                <div id="itens-display" class="itens-display">
+                    <div class="item-box"><img src="${listOfProducts[i].image}" alt="produto">
+                        <img src="imgs/calças/5.webp" alt="produto">
+                        <span>${listOfProducts[i].name}</span>
+                        <br>
+                        <p>Preço: ${listOfProducts[i].price}
+                        Estado:
+                        Tamanho:
+                        </p>
+                        <a onclick="removeIt(${i})">Remover</a></div>
+                        <div class="item-box"><img src="${listOfProducts[i].image}" alt="produto">
+                            <img src="imgs/camisolas/4.webp" alt="produto">
+                            <span>${listOfProducts[i].name}</span>
+                            <br>
+                            <p>Preço: ${listOfProducts[i].price}
+                            Estado:
+                            Tamanho:
+                            </p>
+                            <a onclick="removeIt(${i})">Remover</a></div>
+                            <div class="item-box"><img src="${listOfProducts[i].image}" alt="produto">
+                                <img src="imgs/calças/5.webp" alt="produto">
+                                <span>${listOfProducts[i].name}</span>
+                                <br>
+                                <p>Preço: ${listOfProducts[i].price}
+                                Estado:
+                                Tamanho:
+                                </p>
+                                <a onclick="removeIt(${i})">Remover</a></div>
+                                <div class="item-box"><img src="${listOfProducts[i].image}" alt="produto">
+                                    <img src="imgs/camisolas/4.webp" alt="produto">
+                                    <span>${listOfProducts[i].name}</span>
+                                    <br>
+                                    <p>Preço: ${listOfProducts[i].price}
+                                    Estado:
+                                    Tamanho:
+                                    </p>
+                                    <a onclick="removeIt(${i})">Remover</a></div>
+                                    <div class="item-box"><img src="${listOfProducts[i].image}" alt="produto">
+                                        <img src="imgs/calças/5.webp" alt="produto">
+                                        <span>${listOfProducts[i].name}</span>
+                                        <br>
+                                        <p>Preço: ${listOfProducts[i].price}
+                                        Estado:
+                                        Tamanho:
+                                        </p>
+                                        <a onclick="removeIt(${i})">Remover</a></div>
+                                        <div class="item-box"><img src="${listOfProducts[i].image}" alt="produto">
+                                            <img src="imgs/camisolas/4.webp" alt="produto">
+                                            <span>${listOfProducts[i].name}</span>
+                                            <br>
+                                            <p>Preço: ${listOfProducts[i].price}
+                                            Estado:
+                                            Tamanho:
+                                            </p>
+                                            <a onclick="removeIt(${i})">Remover</a></div>
+                </div> 
+              </div>
+              <div id="buy-btn" class="w3-display-container"><a class="w3-display-topleft buy-itens" onclick="removeIt()">Finalizar Compra</a></div>
+            </header>
+            <div class="item-box"></div>
       </div>
 
       <!-- Footer -->
@@ -208,7 +339,7 @@
 
       // Click on the "Jeans" link on page load to open the accordion for demo purposes
       document.getElementById("myBtn").click();
-
+ 
       // Open and close sidebar
       function w3_open() {
         document.getElementById("mySidebar").style.display = "block";
@@ -220,9 +351,15 @@
         document.getElementById("myOverlay").style.display = "none";
       }
 
+      localStorage.setItem('cartEmpty','true');
+      var numOfProducts = 0;
+
     </script>
+    <script src="knockout-3.5.1.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
     <script src="login.js"></script>
-    <!--<script src="index.js"></script>-->
+    <script src="index.js"></script>
     <script src="conta.js"></script>
+    <script src="product_details.js"></script>
   </body>
 </html>

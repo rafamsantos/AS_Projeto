@@ -35,6 +35,31 @@
       .w3-sidebar a {
         font-family: "Roboto", sans-serif;
       }
+      .acc-container{
+        padding: 5px;
+        width: 100%;
+        display: table;
+        margin-bottom: 8px;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+      }
+      .acc-container .acc-cell {
+        display: table-cell;
+        vertical-align: middle;
+      }
+      .acc-container .user-img{
+        float: left;
+      }
+      .acc-container .config-img{
+        float: right;
+        margin-bottom: 8px;
+        border-radius: 8px;
+        padding:4px;
+      }
+      .acc-container .config-img:hover{
+        background-color: rgb(116, 116, 116);
+        box-shadow: 3px 3px 6px rgba(0,0,0,0.15);
+      }
       .aHover{
         text-decoration: none;
         margin-left: 16px;
@@ -96,9 +121,14 @@
         <a href="sapatilhas.html" class="w3-bar-item w3-button">Sapatilhas </a>
         <a href="casacos.html" class="w3-bar-item w3-button">Casacos</a>
       </div>
-      <a href="contacto.html" class="w3-bar-item w3-button w3-padding">Contacto</a>
+      <div id="acc-container" class="acc-container">
+        <img src="imgs/userimg.png" alt="usuário" class="acc-cell user-img" style="height: 50px;padding-right:-50px">
+        <span id="acc-name" class="acc-cell" style="font-family:'Montserrat',sans-serif;font-size: 11pt;font-weight:600"></span>
+        <img src="imgs/config.png" alt="Configurações" class="acc-cell config-img" style="height:35px" onclick="window.location.href='conta.html'">
+      </div>
+      <a href="contacto.html" class="w3-bar-item w3-button w3-padding">Contato</a>
       <a href="sobre.html" class="w3-bar-item w3-button w3-padding">Sobre nós</a>
-      <a href="login.html" class="aHover">Log in</a>
+      <a href="login.html" class="w3-bar-item w3-button w3-padding" id="loginButton" >Log in</a>
     </nav>
 
     <!-- Top menu on small screens -->
@@ -137,14 +167,14 @@
             <input type="text" id="search-input" onkeyup="myFunction()" placeholder="Search...">
             <button onclick="myFunction()">Pesquisar</button>
             <ul id="product-list"style="display: none;">
-              <li><a href="product_details.html?product=25">Nike Dunk Low</a></li>
-              <li><a href="product_details.html?product=27">Nike Go FlyEase</a></li>
-              <li><a href="product_details.html?product=29">Nike Dunk Low</a></li>
-              <li><a href="product_details.html?product=31">Air Jordan 1 Low FlyEase</a></li>
-              <li><a href="product_details.html?product=26">Nike Air Force</a></li>
-              <li><a href="product_details.html?product=28">Air Jordan 1 Mid SE</a></li>
-              <li><a href="product_details.html?product=30">Nike Benassi JDI</a></li>
-              <li><a href="product_details.html?product=32">Nike Air Force 1 Shadow</a></li>
+              <li><a href="http://127.0.0.1:5500/AS_Projeto/product_details.html?product=25">Nike Dunk Low</a></li>
+              <li><a href="http://127.0.0.1:5500/AS_Projeto/product_details.html?product=27">Nike Go FlyEase</a></li>
+              <li><a href="http://127.0.0.1:5500/AS_Projeto/product_details.html?product=29">Nike Dunk Low</a></li>
+              <li><a href="http://127.0.0.1:5500/AS_Projeto/product_details.html?product=31">Air Jordan 1 Low FlyEase</a></li>
+              <li><a href="http://127.0.0.1:5500/AS_Projeto/product_details.html?product=26">Nike Air Force</a></li>
+              <li><a href="http://127.0.0.1:5500/AS_Projeto/product_details.html?product=28">Air Jordan 1 Mid SE</a></li>
+              <li><a href="http://127.0.0.1:5500/AS_Projeto/product_details.html?product=30">Nike Benassi JDI</a></li>
+              <li><a href="http://127.0.0.1:5500/AS_Projeto/product_details.html?product=32">Nike Air Force 1 Shadow</a></li>
             </ul>
           </div>
         </p>
@@ -289,6 +319,11 @@
     </footer>
 
    
+    <script src="knockout-3.5.1.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="login.js"></script>
+    <script src="index.js"></script>
+    <script src="conta.js"></script>
     <script src="product_details.js"></script>
   </body>
 </html>

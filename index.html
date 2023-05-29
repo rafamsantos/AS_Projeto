@@ -103,10 +103,10 @@
       </div>
       <div id="acc-container" class="acc-container">
         <img src="imgs/userimg.png" alt="usuário" class="acc-cell user-img" style="height: 50px;padding-right:-50px">
-        <span class="acc-cell" style="font-family:'Montserrat',sans-serif;font-size: 11pt;font-weight:600">Simão</span>
-        <img src="imgs/config.png" alt="Configurações" class="acc-cell config-img" style="height:35px">
+        <span id="acc-name" class="acc-cell" style="font-family:'Montserrat',sans-serif;font-size: 11pt;font-weight:600"></span>
+        <img src="imgs/config.png" alt="Configurações" class="acc-cell config-img" style="height:35px" onclick="window.location.href='conta.html'">
       </div>
-      <a href="contacto.html" class="w3-bar-item w3-button w3-padding">Contacto</a>
+      <a href="contacto.html" class="w3-bar-item w3-button w3-padding">Contato</a>
       <a href="sobre.html" class="w3-bar-item w3-button w3-padding">Sobre nós</a>
       <a href="login.html" class="w3-bar-item w3-button w3-padding" id="loginButton" >Log in</a>
     </nav>
@@ -140,7 +140,7 @@
       <header class="w3-container w3-xlarge">
         <p class="w3-left">Página Principal</p>
         <p class="w3-right">
-          <i class="fa fa-shopping-cart w3-margin-right"></i>
+          <a href="conta.html"><i class="fa fa-shopping-cart w3-margin-right"></i></a>
           <i class="fa fa-search"></i>
         </p>
       </header>
@@ -185,8 +185,35 @@
       <!-- End page content -->
     </div>
 
+    <script>
+      // Accordion
+      localStorage.setItem('numOfProducts','0');
+      function myAccFunc() {
+        var x = document.getElementById("demoAcc");
+        if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+        } else {
+          x.className = x.className.replace(" w3-show", "");
+        }
+      }
 
-    <script src="login.js"></script>
+      // Click on the "Jeans" link on page load to open the accordion for demo purposes
+      document.getElementById("myBtn").click();
+
+      // Open and close sidebar
+      function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("myOverlay").style.display = "block";
+      }
+
+      function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("myOverlay").style.display = "none";
+      }
+    </script>
+    <script src="knockout-3.5.1.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
     <script src="index.js"></script>
+    <script src="login.js"></script>
   </body>
 </html>

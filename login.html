@@ -16,8 +16,9 @@
 
   <body>
     <!-- Login -->
-    <div class="login" style="margin-top: 150p;">
-      <form name="form-login" style="height: 450px;">
+    <div class="login" style="margin-top: 150p">
+      <form name="form-login" style="height: 450px">
+        <a href="index.html">Voltar</a>
         <h1>LOGIN</h1>
 
         <label for="userName">Email</label>
@@ -47,7 +48,12 @@
           >
         </div>
 
-        <button class="loginBtn loginBtn--facebook" onclick="redirectToExternalPage()" id = "myButton" class="float-left submit-button">
+        <button
+          class="loginBtn loginBtn--facebook"
+          onclick="redirectToExternalPage()"
+          id="myButton"
+          class="float-left submit-button"
+        >
           Login with Facebook
         </button>
 
@@ -56,7 +62,6 @@
             window.location.href = 'https://pt-pt.facebook.com';
           }
         </script>
-
       </form>
     </div>
 
@@ -132,10 +137,7 @@
     >
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content" id="modal1">
-          <div
-            class="modal-header img"
-            style="background-color: rgb(6, 6, 10)"
-          >
+          <div class="modal-header img" style="background-color: rgb(6, 6, 10)">
             <button
               type="button"
               class="close d-flex align-items-center justify-content-center"
@@ -168,10 +170,7 @@
           </div>
         </div>
         <div class="modal-content" id="modal2">
-          <div
-            class="modal-header img"
-            style="background-color: rgb(0, 0, 0)"
-          >
+          <div class="modal-header img" style="background-color: rgb(0, 0, 0)">
             <button
               type="button"
               class="close d-flex align-items-center justify-content-center"
@@ -192,8 +191,7 @@
         </div>
       </div>
     </div>
-   
-      
+
     <!-- F/Forgot Password Modal -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -205,4 +203,3 @@
     <script src="login.js"></script>
   </body>
 </html>
-

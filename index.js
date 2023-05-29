@@ -1,59 +1,65 @@
-// Função para realizar login
-function login() {
-  // Código para realizar o login do usuário
+// Function to perform login
+/*function login() {
+  // Code to perform user login
 
-  // Simulação do login bem-sucedido
+  // Simulated successful login
   var isLoggedIn = true;
 
   if (isLoggedIn) {
     localStorage.setItem('isLoggedIn', 'true');
-    checkLoginStatus(); // Atualiza o estado do botão após o login
+    checkLoginStatus(); // Update button state after login
+
+    /*
+    // Redirect to the desired page after login
     if (localStorage.getItem('redirect')) {
-      window.location.href = localStorage.getItem('redirect'); // Redireciona para a página desejada após o login
+      window.location.href = localStorage.getItem('redirect');
     }
+    
   } else {
-    alert('Falha no login. Verifique suas credenciais.');
+    alert('Login failed. Please check your credentials.');
   }
-}
+} */
 
-// Função para realizar logout
+// Function to perform logout
 function logout() {
-  // Código para realizar o logout do usuário
+  // Code to perform user logout
   localStorage.setItem('isLoggedIn', 'false');
-  checkLoginStatus(); // Atualiza o estado do botão após o logout
-  window.location.href = 'index.html'; // Redireciona para a página principal após o logout
+  checkLoginStatus(); // Update button state after logout
+  window.location.href = 'index.html'; // Redirect to the main page after logout
 }
 
-// Verifica se o usuário está logado
+// Check if the user is logged in
 function checkLoginStatus() {
   var isLoggedIn = localStorage.getItem('isLoggedIn');
 
   if (isLoggedIn === 'true') {
     document.getElementById('acc-container').style.display = 'table';
+    var name = localStorage.getItem('nome');
+    document.getElementById('acc-name').textContent = name;
     document.getElementById('loginButton').textContent = 'Log out';
     document.getElementById('loginButton').onclick = logout;
   } else {
     document.getElementById('acc-container').style.display = 'none';
     document.getElementById('loginButton').textContent = 'Log in';
-    document.getElementById('loginButton').onclick = login;
+    // document.getElementById('loginButton').onclick = login;
   }
 }
 
-// Executa a função ao carregar a página
+// Execute the function when the page loads
 window.onload = function () {
-  checkLoginStatus(); // Executa a verificação de login
+  checkLoginStatus(); // Perform login check
 
-  // Verifica se há um parâmetro de redirecionamento na URL
+  // Check for a redirection parameter in the URL
   var redirect = localStorage.getItem('redirect');
   if (redirect) {
     localStorage.removeItem('redirect');
     if (localStorage.getItem('isLoggedIn') !== 'true') {
-      window.location.href = redirect; // Redireciona somente se não estiver logado
+      window.location.href = redirect; // Redirect only if not logged in
     }
   }
 };
 
-// Atualiza o estado do login ao navegar para outra página
+// Update the login state when navigating to another page
 window.onunload = function () {
   localStorage.setItem('redirect', window.location.href);
 };

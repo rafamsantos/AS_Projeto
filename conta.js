@@ -1,14 +1,51 @@
 var accDisplay = document.getElementById('acc-page-display');
-function carrinho(cartEmpty) {
-  if (!cartEmpty) {
+const buy = document.getElementById('buy-btn');
+function carrinho() {
+  var cartEmpty = localStorage.getItem('cartEmpty');
+  var numOP = parseInt(localStorage.getItem('numOfProducts'));
+  if (numOfProducts == 0 || numOfProducts === null) {
     accDisplay.innerHTML = `
-      <header class="w3-container w3-xlarge">
-        <h4 class="w3-left">Carrinho</h4>
-      </header>
-      <div class="w3-display-container">
-        <p class="w3-display-middle" style="margin-top: 100px">Você não tem itens no carrinho</p>
-      </div>`;
+        <header class="w3-container w3-xlarge">
+          <h4 class="w3-left">Carrinho</h4>
+        </header>
+        <div class="w3-display-container">
+          <p class="w3-display-middle" style="margin-top: 100px">Você não tem itens no carrinho</p>
+        </div>`;
+    buy.style.display = 'none';
   } else {
+    accDisplay.innerHTML = `
+    <header class="w3-container w3-xlarge">
+    <h4 class="w3-left">Carrinho</h4>
+      <div class="w3-display-container cart-with-itens">
+        <div id="itens-display" class="itens-display">
+        </div> 
+      </div>
+      <div id="buy-btn" class="w3-display-container"><a class="w3-display-topleft buy-itens" onclick="removeIt()">Finalizar Compra</a></div>
+    </header>`;
+    let listOfProducts = [];
+    let index;
+    const shoppingCart = document.getElementById('itens-display');
+    buy.style.display = 'Initial';
+    for (i = 0; i < numOfProducts; i++) {
+      index = localStorage.getItem('produto' + (numOfProducts + 1));
+      listOfProducts[i] = JSON.parse(index);
+    }
+    for (i = 0; i < listOfProducts.length; i++) {
+      const itemBox = document.createElement('div');
+      itemBox.id = 'item' + i;
+      itemBox.classList.add('item-box');
+      itemBox.innerHTML = `
+          <img src="${listOfProducts[i].image}" alt="produto">
+          <span>${listOfProducts[i].name}</span>
+          <br>
+          <p>Preço: ${listOfProducts[i].price}
+          Estado:
+          Tamanho:
+          </p>
+          <a onclick="removeIt(${i})">Remover</a>
+        `;
+      shoppingCart.appendChild(itemBox);
+    }
   }
 }
 
@@ -62,4 +99,10 @@ function config() {
 </div>`;
 }
 
-onload = carrinho();
+window.onload = function () {
+  checkLoginStatus();
+};
+document.getElementById('acc-name-display').textContent =
+  localStorage.getItem('nome');
+document.getElementById('acc-email-display').textContent =
+  localStorage.getItem('email');
