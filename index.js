@@ -28,6 +28,15 @@ function logout() {
   window.location.href = 'index.html'; // Redirect to the main page after logout
 }
 
+function goToCart() {
+  var isLoggedIn = localStorage.getItem('isLoggedIn');
+  if (isLoggedIn === 'false') {
+    window.location.href = 'login.html';
+  } else {
+    window.location.href = 'conta.html';
+  }
+}
+
 // Check if the user is logged in
 function checkLoginStatus() {
   var isLoggedIn = localStorage.getItem('isLoggedIn');
@@ -60,6 +69,7 @@ window.onload = function () {
 };
 
 // Update the login state when navigating to another page
-window.onunload = function () {
+/*window.onunload = function () {
   localStorage.setItem('redirect', window.location.href);
 };
+*/

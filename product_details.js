@@ -376,8 +376,11 @@ function storeItem() {
   );
   const serializedProduto = JSON.stringify(produto); // Convert object to string
   localStorage.setItem('produto' + (numOfProducts + 1), serializedProduto);
+  //console.log(numOfProducts);
   localStorage.setItem('cartEmpty', 'false');
+  var numOfProducts = parseInt(localStorage.getItem('numOfProducts'));
   numOfProducts += 1;
+  console.log(numOfProducts);
   localStorage.setItem('numOfProducts', numOfProducts);
 }
 function removeIt(cartItem) {
