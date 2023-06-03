@@ -330,7 +330,7 @@ if (product) {
                 <p style="font-weight: 400">Price: ${product.price}</p>
             </div>
             <div class="buy-button w3-display-bottomright">
-                    <a href="" style="font-size: 20px;font-weight: 600; text-decoration: none" onclick="storeItem()">Adicionar ao Carrinho</a>
+                    <a href="" style="font-size: 20px;font-weight: 600; text-decoration: none" onclick="adicionarCar()">Adicionar ao Carrinho</a>
             </div>
         </div>
     `;
@@ -364,33 +364,4 @@ function myFunction() {
   }
 
   ul.style.display = ''; // Exibe a lista de resultados
-}
-
-function storeItem() {
-  // Retrieve the selected product from the query parameter
-  const selectProd = getQueryParam('product');
-
-  // Find the corresponding product in the data
-  const produto = productData.find(
-    (item, index) => index + 1 === parseInt(selectProd)
-  );
-  const serializedProduto = JSON.stringify(produto); // Convert object to string
-  localStorage.setItem('produto' + (numOfProducts + 1), serializedProduto);
-  //console.log(numOfProducts);
-  localStorage.setItem('cartEmpty', 'false');
-  var numOfProducts = parseInt(localStorage.getItem('numOfProducts'));
-  numOfProducts += 1;
-  console.log(numOfProducts);
-  localStorage.setItem('numOfProducts', numOfProducts);
-}
-function removeIt(cartItem) {
-  const item = document.getElementById('item' + cartItem);
-  item.style.display = 'none';
-  localStorage.removeItem('produto' + cartItem);
-  numOfProducts -= 1;
-  localStorage.setItem('numOfProducts', numOfProducts);
-  var n = localStorage.getItem('numOfProducts');
-  if (n === 0) {
-    localStorage.setItem('cartEmpty', 'true');
-  }
 }
