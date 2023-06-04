@@ -90,11 +90,21 @@ function limparCar() {
 }
 
 function finalizarCompra() {
+  let cart = JSON.parse(localStorage.getItem('cart'));
+  let compras = JSON.parse(localStorage.getItem('compras'));
+
+  if (!compras) {
+    // If "compras" doesn't exist in localStorage, create it as an empty array
+    compras = [];
+  }
+
+  compras = compras.concat(cart); // Concatenate the arrays
+
   localStorage.setItem('cartEmpty', 'true');
-  localStorage.setItem('compras', localStorage.getItem('cart'));
+  localStorage.setItem('compras', JSON.stringify(compras));
   localStorage.setItem('comprasEmpty', 'false');
   console.log(localStorage.getItem('compras'));
-  localStorage.setItem('cart', '[]');
+  localStorage.setItem('cart', JSON.stringify([])); // Store an empty array as JSON string
   carrinho();
 }
 
