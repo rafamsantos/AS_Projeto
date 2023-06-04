@@ -29,48 +29,77 @@ function adicionarCar() {
       cart.push(produto);
     }
   }
-
+  localStorage.setItem('numOfProducts', cart.length.toString());
   localStorage.setItem('cart', JSON.stringify(cart));
   localStorage.setItem('cartEmpty', 'false');
-  var numOfProducts = parseInt(localStorage.getItem('numOfProducts'));
-  numOfProducts += 1;
-  localStorage.setItem('numOfProducts', numOfProducts);
   console.log(cart);
   console.log(produtos);
 }
 
-function removerCar(id) {
-  let el = id;
+function removerCar(parentElement) {
+  let id = parentElement;
   console.log(id);
-  console.log(el);
-  let nomeProd = el.getElementsByClassName('span');
+  let nomeProd = id.getElementsByTagName('span')[0];
   console.log(nomeProd);
-  let temp = cart.filter((item) => item.nome != nomeProd[0].textContent);
+
+  let c = JSON.parse(localStorage.getItem('cart')); // Assuming cart is stored in localStorage
+  let numProd = parseInt(localStorage.getItem('numOfProducts'));
+  console.log(numProd);
+  numProd -= 1;
+  console.log(numProd);
+  localStorage.setItem('numOfProducts', numProd.toString());
+  let temp = c.filter((item) => item.name != nomeProd.textContent);
   localStorage.setItem('cart', JSON.stringify(temp));
-  var numOfProducts = parseInt(localStorage.getItem('numOfProducts'));
-  numOfProducts -= 1;
-  localStorage.setItem('numOfProducts', numOfProducts);
-  var n = localStorage.getItem('numOfProducts');
-  if (n === 0) {
+  console.log(c);
+  if (numProd == 0) {
     localStorage.setItem('cartEmpty', 'true');
+    carrinho();
   }
-  carrinho();
+  location.reload();
 }
 
 function precoTotal() {
-  let temp = cart.map(function (item) {
-    return parseInt(item.price);
-  });
+  let sum = 0;
+  let cartItems = Object.values(cart);
 
-  let sum = temp.reduce(function (prev, next) {
-    return prev + next;
-  }, 0);
+  for (let i = 0; i < cartItems.length; i++) {
+    let priceString = cartItems[i].price;
+    let price = parseFloat(
+      priceString.replace(/[^0-9.,]+/g, '').replace(',', '.')
+    );
 
-  console.log(sum);
+    if (!isNaN(price)) {
+      sum += price;
+    } else {
+      console.error('Invalid price encountered');
+    }
+  }
+
+  if (!isNaN(sum)) {
+    document.getElementById('preco').textContent = 'Total: €' + sum.toFixed(2);
+    console.log(sum);
+  } else {
+    console.error('Invalid prices encountered');
+  }
 }
 
 function limparCar() {
   localStorage.setItem('cartEmpty', 'true');
   localStorage.setItem('cart', '[]');
   carrinho();
+}
+
+function finalizarCompra() {
+  localStorage.setItem('cartEmpty', 'true');
+  localStorage.setItem('compras', localStorage.getItem('cart'));
+  localStorage.setItem('comprasEmpty', 'false');
+  console.log(localStorage.getItem('compras'));
+  localStorage.setItem('cart', '[]');
+  carrinho();
+}
+
+function limparCompras() {
+  localStorage.setItem('comprasEmpty', 'true');
+  localStorage.setItem('compras', '[]');
+  compras();
 }

@@ -1,5 +1,3 @@
-var numOfProducts = 0;
-
 // Function to retrieve the query parameter value
 function getQueryParam(variable) {
   const query = window.location.search.substring(1);
